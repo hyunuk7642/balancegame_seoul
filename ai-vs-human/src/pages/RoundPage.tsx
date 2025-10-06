@@ -194,24 +194,178 @@ export default function RoundPage() {
   }
 
   return (
-    <main style={{ maxWidth: 960, margin: '0 auto', padding: 24 }}>
-      <header style={{ marginBottom: 16 }} aria-live="polite">
-        <strong>{round_index + 1} / {total_rounds}</strong>
+    <main style={{ 
+      maxWidth: 960, 
+      margin: '0 auto', 
+      padding: 24,
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      position: 'relative'
+    }}>
+      <header style={{ 
+        marginBottom: 32,
+        background: 'rgba(255, 255, 255, 0.15)',
+        backdropFilter: 'blur(10px)',
+        border: '1px solid rgba(255, 255, 255, 0.2)',
+        borderRadius: 20,
+        padding: 24,
+        textAlign: 'center',
+        boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+      }} aria-live="polite">
+        <strong style={{
+          color: 'white',
+          fontSize: '1.1rem',
+          textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+        }}>{round_index + 1} / {total_rounds}</strong>
+        <h2 style={{ 
+          marginTop: 16, 
+          textAlign: 'center', 
+          fontSize: '1.4rem', 
+          fontWeight: 'bold',
+          color: 'white',
+          textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+          margin: '16px 0 0 0'
+        }}>
+          어떤 그림이 더 화가의 그림같아 보이나요?
+        </h2>
       </header>
-      <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-        <figure style={{ border: selected_side === 'left' ? '3px solid #4f46e5' : '1px solid #ddd', borderRadius: 8, padding: 8 }}>
-          <img src={current.left.url} alt={current.left.alt_text} style={{ width: '100%', height: 'auto' }} />
-          <figcaption style={{ marginTop: 8 }}>{current.left.title}</figcaption>
-          <button onClick={() => handleChoose('left')} aria-pressed={selected_side === 'left'} style={{ marginTop: 8 }}>왼쪽 선택</button>
+      <section style={{ 
+        display: 'grid', 
+        gridTemplateColumns: '1fr 1fr', 
+        gap: 24
+      }}>
+        <figure style={{ 
+          background: 'rgba(255, 255, 255, 0.15)',
+          backdropFilter: 'blur(10px)',
+          border: selected_side === 'left' ? '2px solid rgba(255, 255, 255, 0.6)' : '1px solid rgba(255, 255, 255, 0.2)', 
+          borderRadius: 20, 
+          padding: 20,
+          boxShadow: selected_side === 'left' ? '0 12px 40px 0 rgba(31, 38, 135, 0.5)' : '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+          transition: 'all 0.3s ease',
+          cursor: 'pointer',
+          transform: selected_side === 'left' ? 'scale(1.02)' : 'scale(1)'
+        }}>
+          <img src={current.left.url} alt={current.left.alt_text} style={{ 
+            width: '100%', 
+            height: 'auto',
+            borderRadius: 12,
+            boxShadow: '0 4px 16px rgba(0,0,0,0.2)'
+          }} />
+          <button 
+            onClick={() => handleChoose('left')} 
+            aria-pressed={selected_side === 'left'} 
+            style={{ 
+              marginTop: 16,
+              width: '100%',
+              padding: '12px 24px',
+              background: selected_side === 'left' 
+                ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' 
+                : 'rgba(255, 255, 255, 0.2)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.3)',
+              borderRadius: 12,
+              color: 'white',
+              fontWeight: 'bold',
+              fontSize: '1rem',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.2)'
+            }}
+            onMouseEnter={(e) => {
+              if (selected_side !== 'left') {
+                (e.target as HTMLElement).style.background = 'rgba(255, 255, 255, 0.3)'
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (selected_side !== 'left') {
+                (e.target as HTMLElement).style.background = 'rgba(255, 255, 255, 0.2)'
+              }
+            }}
+          >
+            왼쪽 선택
+          </button>
         </figure>
-        <figure style={{ border: selected_side === 'right' ? '3px solid #4f46e5' : '1px solid #ddd', borderRadius: 8, padding: 8 }}>
-          <img src={current.right.url} alt={current.right.alt_text} style={{ width: '100%', height: 'auto' }} />
-          <figcaption style={{ marginTop: 8 }}>{current.right.title}</figcaption>
-          <button onClick={() => handleChoose('right')} aria-pressed={selected_side === 'right'} style={{ marginTop: 8 }}>오른쪽 선택</button>
+        <figure style={{ 
+          background: 'rgba(255, 255, 255, 0.15)',
+          backdropFilter: 'blur(10px)',
+          border: selected_side === 'right' ? '2px solid rgba(255, 255, 255, 0.6)' : '1px solid rgba(255, 255, 255, 0.2)', 
+          borderRadius: 20, 
+          padding: 20,
+          boxShadow: selected_side === 'right' ? '0 12px 40px 0 rgba(31, 38, 135, 0.5)' : '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+          transition: 'all 0.3s ease',
+          cursor: 'pointer',
+          transform: selected_side === 'right' ? 'scale(1.02)' : 'scale(1)'
+        }}>
+          <img src={current.right.url} alt={current.right.alt_text} style={{ 
+            width: '100%', 
+            height: 'auto',
+            borderRadius: 12,
+            boxShadow: '0 4px 16px rgba(0,0,0,0.2)'
+          }} />
+          <button 
+            onClick={() => handleChoose('right')} 
+            aria-pressed={selected_side === 'right'} 
+            style={{ 
+              marginTop: 16,
+              width: '100%',
+              padding: '12px 24px',
+              background: selected_side === 'right' 
+                ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' 
+                : 'rgba(255, 255, 255, 0.2)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.3)',
+              borderRadius: 12,
+              color: 'white',
+              fontWeight: 'bold',
+              fontSize: '1rem',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.2)'
+            }}
+            onMouseEnter={(e) => {
+              if (selected_side !== 'right') {
+                (e.target as HTMLElement).style.background = 'rgba(255, 255, 255, 0.3)'
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (selected_side !== 'right') {
+                (e.target as HTMLElement).style.background = 'rgba(255, 255, 255, 0.2)'
+              }
+            }}
+          >
+            오른쪽 선택
+          </button>
         </figure>
       </section>
-      <div style={{ marginTop: 16 }}>
-        <button onClick={handleNext} disabled={!selected_side}>다음</button>
+      <div style={{ 
+        marginTop: 32,
+        textAlign: 'center'
+      }}>
+        <button 
+          onClick={handleNext} 
+          disabled={!selected_side}
+          style={{
+            padding: '16px 32px',
+            background: selected_side 
+              ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' 
+              : 'rgba(255, 255, 255, 0.1)',
+            backdropFilter: 'blur(10px)',
+            border: '1px solid rgba(255, 255, 255, 0.3)',
+            borderRadius: 16,
+            color: selected_side ? 'white' : 'rgba(255, 255, 255, 0.5)',
+            fontWeight: 'bold',
+            fontSize: '1.1rem',
+            cursor: selected_side ? 'pointer' : 'not-allowed',
+            transition: 'all 0.3s ease',
+            textShadow: selected_side ? '0 2px 4px rgba(0,0,0,0.3)' : 'none',
+            boxShadow: selected_side ? '0 8px 24px rgba(0,0,0,0.3)' : '0 4px 16px rgba(0,0,0,0.1)',
+            minWidth: 120
+          }}
+        >
+          다음
+        </button>
       </div>
     </main>
   )
