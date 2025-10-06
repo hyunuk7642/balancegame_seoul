@@ -30,7 +30,7 @@ const mock_pairs: Pair[] = [
       license: 'Local',
       alt_text: 'AI가 생성한 이미지 01',
       type: 'AI',
-      url: '/assets/ai/AI01.webp',
+      url: `${import.meta.env.BASE_URL}assets/ai/AI01.webp`,
     },
     right: {
       id: '01_human',
@@ -40,7 +40,7 @@ const mock_pairs: Pair[] = [
       license: 'Local',
       alt_text: '인간 작가의 이미지 01',
       type: 'HUMAN',
-      url: '/assets/human/human01.webp',
+      url: `${import.meta.env.BASE_URL}assets/human/human01.webp`,
     },
   },
   {
@@ -52,7 +52,7 @@ const mock_pairs: Pair[] = [
       license: 'Local',
       alt_text: 'AI가 생성한 이미지 02',
       type: 'AI',
-      url: '/assets/ai/AI02.webp',
+      url: `${import.meta.env.BASE_URL}assets/ai/AI02.webp`,
     },
     right: {
       id: '02_human',
@@ -62,7 +62,7 @@ const mock_pairs: Pair[] = [
       license: 'Local',
       alt_text: '인간 작가의 이미지 02',
       type: 'HUMAN',
-      url: '/assets/human/human02.webp',
+      url: `${import.meta.env.BASE_URL}assets/human/human02.webp`,
     },
   },
   {
@@ -74,7 +74,7 @@ const mock_pairs: Pair[] = [
       license: 'Local',
       alt_text: 'AI가 생성한 이미지 03',
       type: 'AI',
-      url: '/assets/ai/AI03.webp',
+      url: `${import.meta.env.BASE_URL}assets/ai/AI03.webp`,
     },
     right: {
       id: '03_human',
@@ -84,7 +84,7 @@ const mock_pairs: Pair[] = [
       license: 'Local',
       alt_text: '인간 작가의 이미지 03',
       type: 'HUMAN',
-      url: '/assets/human/human03.webp',
+      url: `${import.meta.env.BASE_URL}assets/human/human03.webp`,
     },
   },
   {
@@ -96,7 +96,7 @@ const mock_pairs: Pair[] = [
       license: 'Local',
       alt_text: 'AI가 생성한 이미지 04',
       type: 'AI',
-      url: '/assets/ai/AI04.webp',
+      url: `${import.meta.env.BASE_URL}assets/ai/AI04.webp`,
     },
     right: {
       id: '04_human',
@@ -106,7 +106,7 @@ const mock_pairs: Pair[] = [
       license: 'Local',
       alt_text: '인간 작가의 이미지 04',
       type: 'HUMAN',
-      url: '/assets/human/human04.webp',
+      url: `${import.meta.env.BASE_URL}assets/human/human04.webp`,
     },
   },
   {
@@ -118,7 +118,7 @@ const mock_pairs: Pair[] = [
       license: 'Local',
       alt_text: 'AI가 생성한 이미지 05',
       type: 'AI',
-      url: '/assets/ai/AI05.webp',
+      url: `${import.meta.env.BASE_URL}assets/ai/AI05.webp`,
     },
     right: {
       id: '05_human',
@@ -128,7 +128,7 @@ const mock_pairs: Pair[] = [
       license: 'Local',
       alt_text: '인간 작가의 이미지 05',
       type: 'HUMAN',
-      url: '/assets/human/human05.webp',
+      url: `${import.meta.env.BASE_URL}assets/human/human05.webp`,
     },
   },
 ]
