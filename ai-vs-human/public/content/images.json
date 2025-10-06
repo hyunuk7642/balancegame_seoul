@@ -1,0 +1,26 @@
+[
+  {
+    "left": {
+      "id": "p1_ai",
+      "title": "AI Landscape",
+      "author_or_model": "Stable Diffusion",
+      "source_url": "https://example.com/ai1",
+      "license": "CC Demo",
+      "alt_text": "산과 호수가 있는 풍경 이미지(생성형 AI)",
+      "type": "AI",
+      "url": "/assets/ai1.webp"
+    },
+    "right": {
+      "id": "p1_human",
+      "title": "Human Landscape",
+      "author_or_model": "Unknown Painter",
+      "source_url": "https://example.com/h1",
+      "license": "Public Domain",
+      "alt_text": "유화 스타일의 산과 호수 풍경 이미지(인간 작가)",
+      "type": "HUMAN",
+      "url": "/assets/h1.webp"
+    }
+  }
+]
+
+
